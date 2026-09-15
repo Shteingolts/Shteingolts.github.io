@@ -1,0 +1,107 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+/* Built-in Sass modules you’ll likely use across partials */
+@use "sass:math";
+@use "sass:string";
+
+/* Configure your design tokens BEFORE loading any of your partials.
+   Make sure `_sass/_variables.scss` declares `$max-content-width: 72rem !default;` */
+@use "variables" with (
+  $max-content-width: {{ site.max_width | default:  "930px" }}
+);
+
+/* Your project partials — convert these files to `@use "variables";`
+   (or `@use "variables" as *;`) inside each file and qualify variables if needed. */
+@use "themes";
+@use "layout";
+
+// Core styles organized by usage
+@use "typography";
+@use "navbar";
+@use "footer";
+@use "blog";
+@use "publications";
+@use "components";
+@use "utilities";
+
+// Other specialized styles
+@use "tabs";
+@use "teachings";
+@use "typograms";
+
+/*******************************************************************************
+ * Site color override.
+ *
+ * The theme's Sass variables ($purple-color, $cyan-color, etc. in the
+ * al_folio_core gem's _sass/_variables.scss) can't be reliably overridden from
+ * this site's own _sass/ directory: partials like _themes.scss live inside the
+ * gem and `@use "variables"` relative to their own folder, so a same-named
+ * file placed in the site's _sass/ is never consulted. Redeclaring the
+ * resulting CSS custom properties here instead - after `@use "themes"` above
+ * has already emitted its :root / [data-theme="dark"] blocks - reliably wins
+ * the cascade regardless of Sass module resolution.
+ *
+ * Palette: muted slate blue accent in light mode, muted teal-green accent in
+ * dark mode, cooler slate-gray dark backgrounds - in place of the theme
+ * defaults (purple / cyan / near-black).
+ ******************************************************************************/
+:root {
+  --global-theme-color: #2f5d8a;
+  --global-hover-color: #2f5d8a;
+  --global-footer-bg-color: #22282f;
+  --global-code-bg-color: rgba(47, 93, 138, 0.05);
+}
+
+html[data-theme="dark"] {
+  --global-theme-color: #4a8f7d;
+  --global-hover-color: #4a8f7d;
+  --global-bg-color: #22282f;
+}
+
+/*******************************************************************************
+ * Publication year headings: the theme styles these (jekyll-scholar's
+ * `group_by: year` output, an <h2 class="bibliography"> per year) as a faint,
+ * right-aligned divider (see _publications.scss). Make them read as an actual
+ * section title instead: normal text color, left-aligned.
+ ******************************************************************************/
+.publications h2.bibliography {
+  color: var(--global-text-color);
+  text-align: left;
+}
+
+/*******************************************************************************
+ * Contact section (bottom of the about page): the theme's `.social` block is
+ * centered and sized for icon glyphs (see _components.scss). Left-align it
+ * and reset the font size / list styling for the plain text list used here
+ * instead of icons (see _layouts/about.liquid).
+ ******************************************************************************/
+.social {
+  text-align: left;
+  font-size: 1rem;
+}
+
+.social .contact-list {
+  list-style: none;
+  margin: 0 0 0.5rem 0;
+  padding: 0;
+}
+
+/*******************************************************************************
+ * About-page section headings ("Research", "Earlier work", "Selected
+ * publications", "Contact"): the theme gives h2 no special size/weight/color
+ * beyond the base text color (see _typography.scss), so they read as barely
+ * bigger than body text. Make them larger, bold, accent-colored, and add a
+ * divider line above each one to visually separate sections.
+ ******************************************************************************/
+.post article h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--global-theme-color);
+  border-top: 1px solid var(--global-divider-color);
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,33 @@
+# Maps the `abbr` field used in _bibliography/papers.bib to a link/color badge
+# shown next to each publication. Add or edit entries to match your abbrs.
+
+"arXiv":
+  url: https://arxiv.org
+  color: "#b31b1b"
+
+"JCP":
+  url: https://pubs.aip.org/aip/jcp
+
+"CG&D":
+  url: https://pubs.acs.org/journal/cgdefu
+
+"Chem. Eur. J.":
+  url: https://chemistry-europe.onlinelibrary.wiley.com/journal/15213765
+
+"RJGC":
+  url: https://link.springer.com/journal/11176
+
+"Acta Cryst B":
+  url: https://journals.iucr.org/b/
+
+"JSC":
+  url: https://link.springer.com/journal/10947
+
+"CEC":
+  url: https://pubs.rsc.org/en/journals/journalissues/ce
+
+"Acta Cryst A":
+  url: https://journals.iucr.org/a/
+
+"RJE":
+  url: https://link.springer.com/journal/11175

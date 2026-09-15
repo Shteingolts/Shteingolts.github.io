@@ -1,0 +1,7 @@
+# Maps a coauthor's bibtex last name (lowercase) to their homepage, so
+# jekyll-scholar links their name in the publications list. Add entries as
+# needed, e.g.:
+#
+# "mendels":
+#   - firstname: ["Dan"]
+#     url: https://mendelslab.net.technion.ac.il/

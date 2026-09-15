@@ -1,0 +1,62 @@
+cv:
+  name: Sergey A. Shteingolts
+  label: PhD Student
+  email: s.sergey@campus.technion.ac.il
+  location: Haifa, Israel
+  image: ""
+  summary: PhD student at the Technion, working on machine-learning-based molecular simulation.
+
+  social_networks:
+    - network: GitHub
+      username: Shteingolts
+    - network: LinkedIn
+      username: sergey-shteingolts
+    - network: ORCID
+      username: 0000-0001-6265-5684
+    - network: Google Scholar
+      username: GpaEQTUAAAAJ
+
+  address:
+    city: Haifa
+    countryCode: IL
+
+  # Fill in / edit the sections below with your real details. Each entry follows
+  # RenderCV's format — see https://docs.rendercv.com/user_guide/structure_of_the_yaml_input_file/
+  # for every available field. This CV auto-renders to a PDF (see cv_pdf in
+  # _data/socials.yml) whenever this file is pushed, via .github/workflows/render-cv.yml.
+  sections:
+    Education:
+      - institution: Technion - Israel Institute of Technology
+        location: Haifa, Israel
+        studyType: PhD
+        area: "TODO: department / field"
+        start_date: "TODO"
+        end_date: present
+        highlights:
+          - "TODO: add thesis topic / advisor / focus area"
+
+      # - institution: TODO (previous degree, if any)
+      #   location: TODO
+      #   studyType: TODO (e.g. MSc, BSc)
+      #   area: TODO
+      #   start_date: TODO
+      #   end_date: TODO
+
+    # Experience:
+    #   - company: TODO
+    #     position: TODO
+    #     location: TODO
+    #     start_date: TODO
+    #     end_date: TODO
+    #     summary: TODO
+    #     highlights:
+    #       - TODO
+
+    # Skills:
+    #   - name: TODO (e.g. Programming)
+    #     keywords: "Python, PyTorch, ..."
+
+    # Awards:
+    #   - title: TODO
+    #     awarder: TODO
+    #     date: TODO
